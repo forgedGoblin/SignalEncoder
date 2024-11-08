@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --off-white: #f2f0ef;
+    --soft-black: #2e2e2e;
+    --soft-gray: #ebebeb;
+    --darker-gray: #b4b4b4;
+    --deep-gray: #9f9f9f;
+    --softer-black: #424242;
+}
+/* Variables */
+
+body {
+    position: relative;
+    background-size: cover;
+    background-color: var(--off-white);
+    color: var(--soft-black);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #f0f8f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--soft-black);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    background-color: var(--soft-gray);
+    color: var(--soft-black);
+    border: 2px solid var(--deep-gray);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    padding: 0 10px;
+    margin-right: 25px;
+}
+
+input[type="text"]:hover {
+    background-color: var(--darker-gray);
+}
+
+.radio-buttons {
+    position: relative;
+}
+
+.radio-label {
+    margin-left: 19px;
+    white-space: nowrap;
+}
+
+input[type="radio"] {
+    position: absolute;
+    margin-top: 6px;
+}
+
+#start-level {
+    margin-left: 25px;
+}
+
+#signalsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.signal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--off-white);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 20px;
+    color: var(--soft-black);
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: "IBM Plex Mono", sans-serif !important;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.signal-wrapper h3:hover {
+    text-decoration: none;
+    transform: scale(1.2);
+}
+
+canvas {
+    min-height: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f8f4;
+    border-radius: 4px;
+    border: 1px solid var(--darker-gray);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: var(--deep-gray);
+    color: var(--off-white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 30px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #8c9ed1, #a6b8db);
+}
+
+/*Dark Mode Tings*/
+
+#themeToggle {
+    background-image: url(../images/moon-vector-nobg.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    transition: color 0.3s ease;
+    margin: 30px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0.5;
+}
+
+#themeToggle:hover {
+    color: var(--deep-gray);
+    transform: scale(1.2);
+}
+
+body.dark-mode {
+    background-color: var(--soft-black);
+    color: var(--off-white);
+}
+
+body.dark-mode .container {
+    background-color: var(--softer-black);
+    color: var(--off-white);
+}
+
+body.dark-mode h1 {
+    color: var(--off-white);
+}
+
+body.dark-mode h3 {
+    color: var(--off-white);
+}
+
+body.dark-mode input[type="text"]::placeholder {
+    color: var(--off-white);
+}
+
+body.dark-mode input[type="text"] {
+    background-color: var(--darker-gray);
+    color: var(--soft-black);
+    border: 2px solid var(--deep-gray);
+}
+
+body.dark-mode input[type="text"]:hover {
+    background-color: var(--deep-gray);
+}
+
+body.dark-mode .signal-wrapper {
+    background-color: var(--soft-black);
+    color: var(--off-white);
+}
+
+body.dark-mode canvas {
+    background-color: var(--soft-black);
+    border: 1px solid var(--deep-gray);
+}
+
+body.dark-mode button {
+    background-color: var(--deep-gray);
+    color: var(--soft-black);
+}
+
+body.dark-mode button:hover {
+    background: linear-gradient(135deg, #4c4c4c, #6c6c6c);
+}

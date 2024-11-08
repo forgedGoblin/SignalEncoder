@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Signal Encoder</title>
+        <link
+            rel="stylesheet"
+            href="css/styles.css"
+        />
+        <link
+            rel="stylesheet"
+            href="css/fonts.css"
+        />
+    </head>
+    <body>
+        <button id="themeToggle"></button>
+        <main>
+            <header></header>
+            <div class="container">
+                <h1 class="font-ibm-plex-mono-600">Digital Signal Encoder</h1>
+                <div class="input-container">
+                    <label
+                        id="enter-binary"
+                        for="binaryInput"
+                        class="font-ibm-plex-mono-400"
+                        >Enter Binary Signal:
+                    </label>
+                    <input
+                        type="text"
+                        pattern="[01]*"
+                        id="binaryInput"
+                        placeholder="e.g., 10110"
+                        class="font-ibm-plex-mono-400"
+                    />
+                    <label
+                        id="start-level"
+                        class="font-ibm-plex-mono-400"
+                        >Starting Level:</label
+                    >
+                    <div class="radio-buttons">
+                        <input
+                            type="radio"
+                            id="startHigh"
+                            name="startLevel"
+                            value="high"
+                            checked
+                        />
+                        <label
+                            for="startHigh"
+                            class="font-ibm-plex-mono-400 radio-label"
+                            >Start High (1)</label
+                        >
+                        <br />
+                        <input
+                            type="radio"
+                            id="startLow"
+                            name="startLevel"
+                            value="low"
+                        />
+                        <label
+                            for="startLow"
+                            class="font-ibm-plex-mono-400 radio-label"
+                            >Start Low (0)</label
+                        >
+                    </div>
+                </div>
+
+                <button
+                    id="encodeButton"
+                    class="font-ibm-plex-mono-400"
+                >
+                    Encode Binary to Signal
+                </button>
+                <button
+                    id="generateButton"
+                    class="font-ibm-plex-mono-400"
+                >
+                    Generate Random Binary
+                </button>
+                <div id="signalsContainer"></div>
+            </div>
+            <footer></footer>
+        </main>
+
+        <script src="script.js"></script>
+        <script>
+            document
+                .getElementById("binaryInput")
+                .addEventListener("input", function (event) {
+                    this.value = this.value.replace(/[^01]/g, "");
+                });
+        </script>
+    </body>
+</html>
